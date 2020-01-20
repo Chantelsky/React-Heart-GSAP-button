@@ -1,12 +1,23 @@
 import React from "react";
 import { ReactComponent } from "../images/cupid.svg";
+import Heart from "./heart";
 
-const heartButton = ({ count, incrementCount }) => {
+const HeartButton = ({ count, incrementCount }) => {
+  const [isClicked, setIsClicked] = React.useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+
+    //update state in app
+    incrementCount();
+  };
+
   return (
     <div className="container">
-      <button class="btn" onClick={incrementCount}>
+      <button className="btn" onClick={incrementCount}>
         <div className="cupid-icon">
           <ReactComponent alt={"cupid"} />
+          <Heart isClicked={isClicked} />
           <div className="clicky">{count}</div>
         </div>
       </button>
@@ -14,4 +25,4 @@ const heartButton = ({ count, incrementCount }) => {
   );
 };
 
-export default heartButton;
+export default HeartButton;

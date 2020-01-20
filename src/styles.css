@@ -17,6 +17,7 @@ button {
   border: 5px #eb358a solid;
   box-shadow: 5px 10px #888888;
   cursor: pointer;
+  z-index: 1;
 }
 
 button:active {
@@ -36,4 +37,12 @@ button:active {
   left: 70px;
   bottom: 35px;
   font-size: 1.25rem;
+}
+
+.heart-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
